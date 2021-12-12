@@ -5,3 +5,8 @@ cmake-*
 build
 .DS_Store
 *.pdf
+/build_usb
+/_logs
+/.settings
+/.cproject
+/.project
