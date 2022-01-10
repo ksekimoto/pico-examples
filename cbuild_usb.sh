@@ -12,5 +12,5 @@ mkdir -p ${BUILD}
 # export TINYUSB_DEBUG_LEVEL=3
 # export CFG_TUSB_DEBUG=3 
 cmake -S . -B ${BUILD} -DPICO_BUILD_DOCS=0  -G "MSYS Makefiles" -DCMAKE_BUILD_TYPE=Debug
-make clean V=1 DEBUG=1 -C ${BUILD} 2>&1 | tee -a build_clean_${DT}.log
+# make clean V=1 DEBUG=1 -C ${BUILD} 2>&1 | tee -a build_clean_${DT}.log
 make V=1 DEBUG=1 -C ${BUILD} 2>&1 | tee -a build_${DT}.log
