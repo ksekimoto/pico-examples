@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 
+set(CMAKE_VERBOSE_MAKEFILE on)
+
 # Pull in SDK (must be before project)
 include(pico_sdk_import.cmake)
 
@@ -35,7 +37,7 @@ add_compile_options(-Wall
 # add_subdirectory(cmake)
 # add_subdirectory(divider)
 # add_subdirectory(dma)
-# add_subdirectory(flash)
+add_subdirectory(flash)
 # add_subdirectory(gpio)
 # add_subdirectory(i2c)
 # add_subdirectory(interp)

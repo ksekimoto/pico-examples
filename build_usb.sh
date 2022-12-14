@@ -1,6 +1,6 @@
 # export CMAKE_BUILD_TYPE=Debug
 export PICO_SDK_PATH="./../../pico-sdk"
-export BUILD="build_usb"
+export BUILD="build"
 DT=`date +%Y%m%d%H%M`
 mkdir -p ${BUILD}
 # CFG_TUSB_DEBUG for debugging

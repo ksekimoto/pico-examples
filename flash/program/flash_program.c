@@ -12,7 +12,8 @@
 
 // We're going to erase and reprogram a region 256k from the start of flash.
 // Once done, we can access this at XIP_BASE + 256k.
-#define FLASH_TARGET_OFFSET (256 * 1024)
+// changed -> 1024K
+#define FLASH_TARGET_OFFSET (1024 * 1024)
 
 const uint8_t *flash_target_contents = (const uint8_t *) (XIP_BASE + FLASH_TARGET_OFFSET);
 
@@ -37,10 +38,11 @@ int main() {
 
     // Note that a whole number of sectors must be erased at a time.
     printf("\nErasing target region...\n");
-    flash_range_erase(FLASH_TARGET_OFFSET, FLASH_SECTOR_SIZE);
+    flash_range_erase(FLASH_TARGET_OFFSET, FLASH_SECTOR_SIZE * 128);
     printf("Done. Read back target region:\n");
     print_buf(flash_target_contents, FLASH_PAGE_SIZE);
 
+#if 0
     printf("\nProgramming target region...\n");
     flash_range_program(FLASH_TARGET_OFFSET, random_data, FLASH_PAGE_SIZE);
     printf("Done. Read back target region:\n");
@@ -55,4 +57,5 @@ int main() {
         printf("Programming failed!\n");
     else
         printf("Programming successful!\n");
+#endif
 }
